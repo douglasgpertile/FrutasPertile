@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8E8E03A3-1E90-4C8E-B9E6-2F33102D71A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApp", "WebApp", "{408CA023-BF2F-448F-86F5-2F8A49ADC199}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrutasPertile.ProductCatalog", "Services\FrutasPertile.ProductCatalog\FrutasPertile.ProductCatalog.csproj", "{D33E0F7E-EAAE-44F2-89F5-2D8813A49160}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D33E0F7E-EAAE-44F2-89F5-2D8813A49160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D33E0F7E-EAAE-44F2-89F5-2D8813A49160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D33E0F7E-EAAE-44F2-89F5-2D8813A49160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D33E0F7E-EAAE-44F2-89F5-2D8813A49160}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D33E0F7E-EAAE-44F2-89F5-2D8813A49160} = {8E8E03A3-1E90-4C8E-B9E6-2F33102D71A5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52D7CE67-90E7-458D-AEDC-06C847B2F83E}
+	EndGlobalSection
+EndGlobal
