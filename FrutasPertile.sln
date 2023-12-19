@@ -9,6 +9,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApp", "WebApp", "{408CA0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrutasPertile.ProductCatalog", "Services\FrutasPertile.ProductCatalog\FrutasPertile.ProductCatalog.csproj", "{D33E0F7E-EAAE-44F2-89F5-2D8813A49160}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "product-slide-show", "product-slide-show", "{24ECAD0F-8290-43BE-975B-5FA8B7814FAD}"
+	ProjectSection(SolutionItems) = preProject
+		WebApp\products-slide-show\.gitignore = WebApp\products-slide-show\.gitignore
+		WebApp\products-slide-show\package-lock.json = WebApp\products-slide-show\package-lock.json
+		WebApp\products-slide-show\package.json = WebApp\products-slide-show\package.json
+		WebApp\products-slide-show\README.md = WebApp\products-slide-show\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +33,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D33E0F7E-EAAE-44F2-89F5-2D8813A49160} = {8E8E03A3-1E90-4C8E-B9E6-2F33102D71A5}
+		{24ECAD0F-8290-43BE-975B-5FA8B7814FAD} = {408CA023-BF2F-448F-86F5-2F8A49ADC199}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52D7CE67-90E7-458D-AEDC-06C847B2F83E}

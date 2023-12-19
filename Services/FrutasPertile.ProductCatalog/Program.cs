@@ -5,7 +5,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddEndpointsApiExplorer()
     .AddSwaggerGen()
-    .AddSingleton<ProductDiscoverer>();
+    .AddSingleton<ProductDiscoverer>()
+    .AddCors(c => c
+        .AddDefaultPolicy(p => p
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .WithOrigins("http://localhost:3000")        
+        )
+    );
 
 
 var app = builder.Build();
@@ -17,6 +24,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors();
+
 app.MapGet("/products", async (ProductDiscoverer discoverer) => 
 {
     try
@@ -24,7 +33,7 @@ app.MapGet("/products", async (ProductDiscoverer discoverer) =>
         var products = await discoverer.DiscoverProductsAsync();
         return products;
     }
-    catch (Exception)
+    catch (Exception ex)
     {
     }
 

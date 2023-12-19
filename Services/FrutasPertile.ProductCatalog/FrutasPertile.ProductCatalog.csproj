@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="AngleSharp" Version="1.0.7" />
-    <PackageReference Include="AngleSharp.Css" Version="0.17.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 

@@ -1,6 +1,8 @@
 ﻿using AngleSharp;
 using AngleSharp.Dom;
 
+using System.Text.RegularExpressions;
+
 namespace FrutasPertile.ProductCatalog
 {
     public class ProductDiscoverer
@@ -12,10 +14,10 @@ namespace FrutasPertile.ProductCatalog
 
         private IBrowsingContext _browsingContext = BrowsingContext.New(Configuration
             .Default
-            .WithCss()
             .WithDefaultLoader()
          );
 
+        private static Regex _imagePathRegex = new Regex(@"url\((.*?)=", RegexOptions.Compiled);
 
         public async Task<IEnumerable<Product>> DiscoverProductsAsync()
         {
@@ -37,21 +39,18 @@ namespace FrutasPertile.ProductCatalog
             var name = nameAndPrice[0].Trim();
             var price = nameAndPrice.ElementAtOrDefault(1)?.Trim();
 
-
             var imageElement = cardElement.FirstElementChild?.FirstElementChild;
-            var backgroundImage = imageElement
-                .ComputeCurrentStyle()
-                .FirstOrDefault(p => p.Name == AngleSharp.Css.PropertyNames.BackgroundImage);
+            var style = imageElement?.Attributes.First(a => a.Name == "style");         
 
-            var cssValues = backgroundImage?.RawValue as AngleSharp.Css.Values.CssListValue<AngleSharp.Css.Dom.ICssValue>;
-            var urlValue = cssValues?.First() as AngleSharp.Css.Values.CssUrlValue;
-            var imagePath = urlValue?.Path;
+            var match = _imagePathRegex.Match(style.Value);
+            var imagePath = match.Groups[1].Value;
+            var fullHdImagePath = imagePath + "=w1980-h1020";
 
             return new Product
             {
                 Name = name,
                 Price = price,
-                ImageUrl = imagePath
+                ImageUrl = fullHdImagePath
             };
         }
 
