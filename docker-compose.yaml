@@ -1,0 +1,11 @@
+services:
+
+  producs-slide-show:
+    build: WebApp/products-slide-show
+    ports:
+      - "6980:6980"
+
+  api-service:
+    build: Services/FrutasPertile.ProductCatalog
+    ports:
+      - "6981:6981"

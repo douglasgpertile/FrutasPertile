@@ -10,7 +10,7 @@ builder.Services
         .AddDefaultPolicy(p => p
             .AllowAnyHeader()
             .AllowAnyMethod()
-            .WithOrigins("http://localhost:3000")        
+            .AllowAnyOrigin()
         )
     );
 
@@ -24,9 +24,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors();
+app.UseCors(c => c.AllowAnyOrigin());
 
-app.MapGet("/products", async (ProductDiscoverer discoverer) => 
+app.MapGet("/api/products", async (ProductDiscoverer discoverer) => 
 {
     try
     {

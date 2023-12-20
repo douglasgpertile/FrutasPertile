@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState([]);  
 
   const updateData = () => {
-    fetch('http://localhost:5263/products')
+    fetch('http://localhost:6981/api/products')
       .then(res => res.json())
       .then(json => setData(json))
       .catch(error => console.error(error));
@@ -15,8 +15,8 @@ function App() {
 
   useEffect(() => {
     updateData();
-    let intervaç = setInterval(() => updateData(), 60000);
-    return () => clearInterval(intervaç);
+    let interval = setInterval(() => updateData(), 60000);
+    return () => clearInterval(interval);
   }, []);
   
   return (
