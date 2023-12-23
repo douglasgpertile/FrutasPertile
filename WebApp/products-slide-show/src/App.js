@@ -22,10 +22,8 @@ function App() {
   return (
     <Swiper
       slidesPerView={1}
-      pagination={{ clickable: true }}
       navigation
       autoplay={{delay: 5000}}
-      speed={1800}
       loop={true}
     >
       {data.map((item) => (
