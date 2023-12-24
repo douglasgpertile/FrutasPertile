@@ -24,6 +24,7 @@ function App() {
       slidesPerView={1}
       navigation
       autoplay={{delay: 5000}}
+      speed={10}
       loop={true}
     >
       {data.map((item) => (
