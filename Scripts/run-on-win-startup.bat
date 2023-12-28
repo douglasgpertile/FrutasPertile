@@ -1,0 +1,1 @@
+sh startup-frutas-pertile-services.sh
